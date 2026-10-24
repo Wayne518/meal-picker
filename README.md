@@ -1,5 +1,8 @@
 # 今天吃什麼抽籤器 🍱 (What to Eat Today Picker)
 
+> 🌐 **線上體驗網址**：[https://wayne518.github.io/meal-picker/](https://wayne518.github.io/meal-picker/)  
+> （免安裝任何軟體，點開即用，支援電腦與手機）
+
 專為每天中午不知道吃什麼的學生與上班族設計的純前端抽籤小工具！透過預算與餐點類型篩選，一鍵隨機幫你決定今日午餐，並具備智慧「防連續重複抽中」機制，讓選擇不再困難。
 
 ---
@@ -15,20 +18,13 @@
 
 ---
 
-## 🚀 如何開啟網頁測試
+## 🚀 如何在本地開啟使用
 
-本專案為純 HTML、CSS、JavaScript 架構，不需要安裝任何環境或執行伺服器指令，以下方式任選一種即可開啟：
+本專案為純 HTML、CSS、JavaScript 架構，不需要安裝任何環境或執行伺服器指令：
 
-### 方法一：直接點擊開啟（最簡單推薦 👍）
-1. 打開 Windows「檔案總管」，進入本專案資料夾：
-   `C:\Users\User\Documents\hello-python\meal-picker`
-2. 找到 `index.html` 檔案。
-3. 對著 `index.html` **按兩下滑鼠左鍵**（或按右鍵選擇「開啟檔案」 -> 選擇 Chrome、Edge 等任何瀏覽器）。
-4. 瀏覽器就會立即載入並顯示「今天吃什麼抽籤器」！
-
-### 方法二：直接將檔案拖入瀏覽器
-1. 先打開您的瀏覽器（如 Google Chrome 或 Microsoft Edge）。
-2. 在檔案總管中將 `index.html` 拖曳進瀏覽器視窗中放下，即可開始測試。
+1. 點擊 GitHub 頁面上方的綠色「Code」按鈕，選擇「Download ZIP」**下載並解壓縮專案**。
+2. **開啟資料夾中的 `index.html`**（按兩下滑鼠左鍵或直接拖曳至 Chrome、Edge 等瀏覽器）。
+3. 即可直接開始使用「今天吃什麼抽籤器」！
 
 ---
 
