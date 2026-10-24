@@ -1,0 +1,406 @@
+/* ==========================================================================
+   今天吃什麼抽籤器 - 樣式表 (CSS)
+   設計風格：溫暖可愛、大按鈕、清晰排版、手機與電腦皆適用 (RWD)
+   ========================================================================== */
+
+/* 全域重設與基礎字型 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+  background-color: #FFF9F2;
+  color: #3D2C2E;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 24px 16px;
+}
+
+/* 應用程式主外框容器 */
+.app-container {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==========================================================================
+   頁首標題區塊
+   ========================================================================== */
+.header {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.header-icon {
+  font-size: 3.5rem;
+  margin-bottom: 8px;
+  display: inline-block;
+  animation: bounce 2s infinite ease-in-out;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #E25D3B;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.subtitle {
+  font-size: 1.05rem;
+  color: #7A6263;
+  font-weight: 500;
+}
+
+/* ==========================================================================
+   主要卡片區塊
+   ========================================================================== */
+.main-card {
+  background: #FFFFFF;
+  border-radius: 24px;
+  padding: 28px 24px;
+  box-shadow: 0 10px 30px rgba(226, 93, 59, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+  border: 2px solid #FFE8D6;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* 篩選群組 */
+.filter-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.filter-label {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #4A3537;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label-icon {
+  font-size: 1.25rem;
+}
+
+/* 單選按鈕卡片排列（Grid） */
+.radio-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 10px;
+}
+
+.radio-card {
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* 隱藏原生 radio 圓圈，改用自訂卡片樣式 */
+.radio-card input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.radio-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 10px;
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: #6C585A;
+  background-color: #FFF5EC;
+  border: 2px solid #FEDCC5;
+  border-radius: 14px;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+  min-height: 48px;
+}
+
+/* 滑鼠滑過選項卡片 */
+.radio-card:hover .radio-content {
+  background-color: #FFE6D5;
+  border-color: #FFB385;
+  transform: translateY(-1px);
+}
+
+/* 選中狀態高亮 */
+.radio-card input[type="radio"]:checked + .radio-content {
+  background-color: #FF7043;
+  color: #FFFFFF;
+  border-color: #E25D3B;
+  box-shadow: 0 4px 12px rgba(226, 93, 59, 0.28);
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   操作按鈕（大、清楚、點擊感強）
+   ========================================================================== */
+.action-section {
+  display: flex;
+  justify-content: center;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  border-radius: 18px;
+  font-size: 1.25rem;
+  font-weight: 800;
+  padding: 16px 24px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  outline: none;
+}
+
+.btn-icon {
+  font-size: 1.4rem;
+}
+
+/* 主要按鈕（幫我決定！） */
+.btn-primary {
+  background: linear-gradient(135deg, #FF6F61 0%, #E25D3B 100%);
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(226, 93, 59, 0.35);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(226, 93, 59, 0.45);
+  background: linear-gradient(135deg, #FF7B6E 0%, #EA6442 100%);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 4px 12px rgba(226, 93, 59, 0.3);
+}
+
+/* 次要按鈕（再抽一次！） */
+.btn-secondary {
+  background: #FFF0E5;
+  color: #E25D3B;
+  border: 2px solid #FFCBB0;
+  font-size: 1.1rem;
+  padding: 14px 20px;
+  margin-top: 14px;
+}
+
+.btn-secondary:hover {
+  background: #FFE3D1;
+  border-color: #FFAF85;
+  transform: translateY(-1px);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+/* ==========================================================================
+   抽籤結果區塊
+   ========================================================================== */
+.result-section {
+  transition: all 0.3s ease;
+}
+
+/* 隱藏輔助類 */
+.hidden {
+  display: none !important;
+}
+
+/* 餐點結果卡片 */
+.meal-card {
+  background: linear-gradient(180deg, #FFFFFF 0%, #FFF9F5 100%);
+  border: 2px dashed #FF9E79;
+  border-radius: 20px;
+  padding: 24px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: popIn 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.meal-tag {
+  display: inline-block;
+  background-color: #FFF0E6;
+  color: #E25D3B;
+  font-weight: 700;
+  font-size: 0.9rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  border: 1px solid #FFCDBC;
+}
+
+.meal-name {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2F1E20;
+  word-break: break-word;
+}
+
+.meal-price-badge {
+  background-color: #E8F5E9;
+  color: #2E7D32;
+  font-weight: 700;
+  font-size: 1.15rem;
+  padding: 6px 18px;
+  border-radius: 12px;
+  border: 1px solid #C8E6C9;
+}
+
+.currency {
+  font-size: 0.95rem;
+  margin-right: 2px;
+}
+
+.price-number {
+  font-size: 1.45rem;
+  font-weight: 900;
+}
+
+.meal-desc {
+  font-size: 1rem;
+  color: #634C4E;
+  margin-top: 2px;
+}
+
+.price-disclaimer {
+  font-size: 0.85rem;
+  color: #9C8284;
+}
+
+/* 無符合餐點的提示狀態 */
+.empty-state {
+  background: #FFFDF9;
+  border: 2px dashed #E0CFCA;
+  border-radius: 20px;
+  padding: 28px 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: popIn 0.35s ease-out;
+}
+
+.empty-icon {
+  font-size: 3rem;
+  margin-bottom: 4px;
+}
+
+.empty-state h3 {
+  font-size: 1.3rem;
+  color: #D34526;
+  font-weight: 800;
+}
+
+.empty-state p {
+  color: #6C5557;
+  font-size: 0.95rem;
+}
+
+.empty-hint {
+  margin-top: 6px;
+  background-color: #FFF3CD;
+  color: #856404;
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-size: 0.9rem !important;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   頁尾資訊
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 10px 0 20px 0;
+  color: #9E8587;
+  font-size: 0.9rem;
+}
+
+.footer-note {
+  font-size: 0.82rem;
+  margin-top: 4px;
+  color: #B5A0A2;
+}
+
+/* ==========================================================================
+   動態效果（微動畫）
+   ========================================================================== */
+@keyframes popIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ==========================================================================
+   響應式設計（針對手機小螢幕最佳化）
+   ========================================================================== */
+@media (max-width: 480px) {
+  body {
+    padding: 16px 12px;
+  }
+
+  .main-card {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+
+  .header h1 {
+    font-size: 1.65rem;
+  }
+
+  .radio-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .btn {
+    font-size: 1.15rem;
+    padding: 14px 18px;
+  }
+
+  .meal-name {
+    font-size: 1.7rem;
+  }
+}

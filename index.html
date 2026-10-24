@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>今天吃什麼抽籤器 🍱</title>
+  <!-- 引入自訂樣式表 -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- 頁面標題區塊 -->
+    <header class="header">
+      <div class="header-icon">🍱</div>
+      <h1>今天吃什麼抽籤器</h1>
+      <p class="subtitle">午餐不知道吃什麼？讓命運為你決定！</p>
+    </header>
+
+    <!-- 篩選條件設定區塊 -->
+    <main class="main-card">
+      <section class="filter-section">
+        <!-- 預算篩選 -->
+        <div class="filter-group">
+          <label class="filter-label">
+            <span class="label-icon">💰</span> 選擇預算
+          </label>
+          <div class="radio-group" id="budget-group">
+            <label class="radio-card">
+              <input type="radio" name="budget" value="100">
+              <span class="radio-content">100 元以下</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="budget" value="150" checked>
+              <span class="radio-content">150 元以下</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="budget" value="all">
+              <span class="radio-content">不限預算</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- 餐點類型篩選 -->
+        <div class="filter-group">
+          <label class="filter-label">
+            <span class="label-icon">🍽️</span> 餐點類型
+          </label>
+          <div class="radio-group" id="category-group">
+            <label class="radio-card">
+              <input type="radio" name="category" value="飯">
+              <span class="radio-content">🍚 飯食</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="category" value="麵">
+              <span class="radio-content">🍜 麵食</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="category" value="其他">
+              <span class="radio-content">🥟 其他</span>
+            </label>
+            <label class="radio-card">
+              <input type="radio" name="category" value="all" checked>
+              <span class="radio-content">✨ 都可以</span>
+            </label>
+          </div>
+        </div>
+      </section>
+
+      <!-- 主要操作按鈕 -->
+      <div class="action-section">
+        <button id="draw-btn" class="btn btn-primary">
+          <span class="btn-icon">🎲</span> 幫我決定！
+        </button>
+      </div>
+
+      <!-- 抽籤結果顯示區塊 -->
+      <section id="result-section" class="result-section hidden">
+        <!-- 成功抽中餐點時顯示的卡片 -->
+        <div id="meal-card" class="meal-card">
+          <div class="meal-tag" id="meal-category">飯食</div>
+          <h2 class="meal-name" id="meal-name">排骨便當</h2>
+          <div class="meal-price-badge">
+            預估價格：<span class="currency">NT$</span> <span id="meal-price" class="price-number">95</span>
+          </div>
+          <p class="meal-desc" id="meal-desc">經典台式排骨飯，配菜豐富又飽足！</p>
+          <p class="price-disclaimer">※ 價格僅供參考，依各店家實際定價為準</p>
+          
+          <button id="redraw-btn" class="btn btn-secondary">
+            <span class="btn-icon">🔄</span> 不喜歡？再抽一次！
+          </button>
+        </div>
+
+        <!-- 找不到符合條件時顯示的提示 -->
+        <div id="empty-state" class="empty-state hidden">
+          <div class="empty-icon">😢</div>
+          <h3>哎呀！沒有找到符合條件的餐點</h3>
+          <p>可能是預算太緊或分類條件太少囉～</p>
+          <p class="empty-hint">💡 建議嘗試放寬預算，或是選擇「都可以」再試一次！</p>
+        </div>
+      </section>
+    </main>
+
+    <!-- 頁尾說明 -->
+    <footer class="footer">
+      <p>期中專題作品：今天吃什麼抽籤器 🥢</p>
+      <p class="footer-note">學生午餐救星 • 初學者友善純前端網頁</p>
+    </footer>
+  </div>
+
+  <!-- 引入 JavaScript 程式邏輯 -->
+  <script src="app.js"></script>
+</body>
+</html>
